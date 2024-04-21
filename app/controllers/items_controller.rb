@@ -9,6 +9,12 @@ class ItemsController < ApplicationController
     render json: item
   end
 
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    render json: item
+  end
+
   private
 
   def resource_params
